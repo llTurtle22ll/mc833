@@ -1,0 +1,16 @@
+Servidor iniciado e aguardando conexões...
+Conexão de 127.0.0.1:38624
+Conexão de 127.0.0.1:57984
+Resposta do cliente 127.0.0.1:38624: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:38624: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:38624: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:38624: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:38624: TAREFA_LIMPEZA CONCLUÍDA
+Desconexão de 127.0.0.1:38624
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Resposta do cliente 127.0.0.1:57984: TAREFA_LIMPEZA CONCLUÍDA
+Desconexão de 127.0.0.1:57984
