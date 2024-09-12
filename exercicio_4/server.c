@@ -39,7 +39,7 @@ int should_send_task() {
     srand(time(NULL));
     int decision = rand() % 100;  // Retorna 0 ou 1 aleatoriamente
 
-    return decision < 70;
+    return decision < 80;
 }
 
 // Função que trata cada conexão do cliente
@@ -60,12 +60,14 @@ void handle_client(int client_sock, struct sockaddr_in client_addr) {
             // Enviar uma tarefa para o cliente
             char *task = "TAREFA: LIMPEZA";
             send(client_sock, task, strlen(task), 0);
+            snprintf(log_entry, BUFFER_SIZE, "Tarefa enviada para %s:%d: TAREFA_LIMPEZA", client_ip, client_port);
+            log_message(log_entry);
 
             // Aguardar resposta do cliente
             int bytes_received = recv(client_sock, buffer, BUFFER_SIZE, 0);
             while  (bytes_received > 0) {
                     buffer[bytes_received] = '\0';
-                    printf("\nDEBUG LOG\n");
+                    // printf("\nDEBUG LOG\n");
                     snprintf(log_entry, BUFFER_SIZE, "Resposta do cliente %s:%d: %.980s", client_ip, client_port, buffer);
                     log_message(log_entry);
                     break;
@@ -73,18 +75,16 @@ void handle_client(int client_sock, struct sockaddr_in client_addr) {
             
         } else {
             // Encerrar a conexão com o cliente
-            char *task = "TAREFA: EXECUTE";
+            char *task = "ENCERRAR";
             send(client_sock, task, strlen(task), 0);
+            snprintf(log_entry, BUFFER_SIZE, "Instrução enviada para %s:%d: ENCERRAR", client_ip, client_port);
+            log_message(log_entry);
             int bytes_received = recv(client_sock, buffer, BUFFER_SIZE, 0);
-            while (1)
-            {
-                if (bytes_received > 0) {
-                    buffer[bytes_received] = '\0';
-                    printf("\nDEBUG LOG EXECUTE\n");
-                    snprintf(log_entry, BUFFER_SIZE, "Resposta do cliente %s:%d: %.980s", client_ip, client_port, buffer);
-                    log_message(log_entry);
-                    break;
-                }
+            if (bytes_received > 0) {
+                buffer[bytes_received] = '\0';
+                // printf("\nDEBUG LOG ENCERRAR\n");
+                snprintf(log_entry, BUFFER_SIZE, "Resposta do cliente %s:%d: %.980s", client_ip, client_port, buffer);
+                log_message(log_entry);
             }
             break;
         }

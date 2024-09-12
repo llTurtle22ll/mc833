@@ -16,7 +16,8 @@ int main(int argc, char *argv[]) {
     const char *server_ip = argv[1];
     int server_port = atoi(argv[2]);
     int client_sock;
-    struct sockaddr_in server_addr;
+    struct sockaddr_in server_addr, client_addr;
+    socklen_t client_addr_len = sizeof(client_addr);
     char buffer[BUFFER_SIZE];
 
     // Criar o socket do cliente
@@ -37,23 +38,47 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    //Adquirir informações sobre a conexão
+    if (getsockname(client_sock, (struct sockaddr *)&client_addr, &client_addr_len) == -1) {
+        perror("Erro ao obter o endereço do cliente");
+        close(client_sock);
+        exit(EXIT_FAILURE);
+    }
+
+    char client_ip[INET_ADDRSTRLEN];
+    inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, sizeof(client_ip));
+
     // Exibir informações sobre a conexão
     printf("Conectado ao servidor %s:%d\n", server_ip, server_port);
+    printf("Informações da conexão %s:%d\n", client_ip, ntohs(client_addr.sin_port));
 
-    // Receber tarefa do servidor
-    int bytes_received = recv(client_sock, buffer, BUFFER_SIZE, 0);
-    while (bytes_received > 0) {
-        buffer[bytes_received] = '\0';
-        printf("Tarefa recebida: %s\n", buffer);
+    while (1)
+    {
+        // Receber tarefa do servidor
+        int bytes_received = recv(client_sock, buffer, BUFFER_SIZE, 0);
+        if (bytes_received > 0) {
+            
+            buffer[bytes_received] = '\0';
+            printf("Tarefa recebida: %s\n", buffer);
 
-        // Simular processamento da tarefa
-        sleep(5);
+            // Simular processamento da tarefa
+            sleep(5);
 
-        // Enviar resposta para o servidor
-        char *response = "TAREFA_LIMPEZA CONCLUÍDA";
-        send(client_sock, response, strlen(response), 0);
-        
+            //Enviar a resposta de desconexão para o servidor
+            if (strcmp("ENCERRAR", buffer) == 0)
+            {
+                char *response = "CONEXÃO ENCERRADA";
+                send(client_sock, response, strlen(response), 0);
+                break;
+            }
+
+            // Enviar resposta para o servidor
+            char *response = "TAREFA_LIMPEZA CONCLUÍDA";
+            send(client_sock, response, strlen(response), 0);
+            
+        }
     }
+    
 
 
     // Fechar a conexão
