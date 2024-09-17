@@ -1,15 +1,31 @@
 Servidor iniciado e aguardando conexões...
-Conexão de 0.0.0.0:0
-Instrução enviada para 0.0.0.0:0: ENCERRAR
-Conexão de 0.0.0.0:0
-Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
-Resposta do cliente 0.0.0.0:0: CONEXÃO ENCERRADA
-Desconexão de 0.0.0.0:0
-Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
-Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
-Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
-Instrução enviada para 0.0.0.0:0: ENCERRAR
-Resposta do cliente 0.0.0.0:0: CONEXÃO ENCERRADA
-Desconexão de 0.0.0.0:0
+Conexão de 127.0.0.1:36620
+Tarefa enviada para 127.0.0.1:36620: TAREFA_LIMPEZA
+Conexão de 127.0.0.1:36624
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36620: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36620: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36620: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36620: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: TAREFA_LIMPEZA CONCLUÍDA
+Instrução enviada para 127.0.0.1:36620: ENCERRAR
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 127.0.0.1:36624: TAREFA_LIMPEZA
+Resposta do cliente 127.0.0.1:36620: CONEXÃO ENCERRADA
+Desconexão de 127.0.0.1:36620
+Resposta do cliente 127.0.0.1:36624: TAREFA_LIMPEZA CONCLUÍDA
+Instrução enviada para 127.0.0.1:36624: ENCERRAR
+Resposta do cliente 127.0.0.1:36624: CONEXÃO ENCERRADA
+Desconexão de 127.0.0.1:36624

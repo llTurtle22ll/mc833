@@ -29,9 +29,9 @@ int Connect(int client_sock, struct sockaddr_in server_addr) {
     return 0;
 }
 
-int Getsockname(int client_sock, struct sockaddr_in client_addr, socklen_t client_addr_len) {
+int Getsockname(int client_sock, struct sockaddr_in *client_addr, socklen_t *client_addr_len) {
     //Adquirir informações sobre a conexão
-    if (getsockname(client_sock, (struct sockaddr *)&client_addr, &client_addr_len) == -1) {
+    if (getsockname(client_sock, (struct sockaddr *)client_addr, client_addr_len) == -1) {
         perror("Erro ao obter o endereço do cliente");
         close(client_sock);
         exit(EXIT_FAILURE);
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
 
     Connect(client_sock, server_addr);
 
-    Getsockname(client_sock, client_addr, client_addr_len);
+    Getsockname(client_sock, &client_addr, &client_addr_len);
 
     char client_ip[INET_ADDRSTRLEN];
     inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, sizeof(client_ip));

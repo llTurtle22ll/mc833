@@ -130,10 +130,10 @@ int Listen(int server_sock) {
     }
 }
 
-int Accept(int server_sock, struct sockaddr_in client_addr, socklen_t addr_len) {
+int Accept(int server_sock, struct sockaddr_in *client_addr, socklen_t *addr_len) {
     int client_sock;
     // Aceitar conexão de um cliente
-    if ((client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &addr_len)) == -1) {
+    if ((client_sock = accept(server_sock, (struct sockaddr *)client_addr, addr_len)) == -1) {
         perror("Erro no accept");
     }
 
@@ -164,7 +164,7 @@ int main(int argc, char *argv[]) {
     log_message("Servidor iniciado e aguardando conexões...");
 
     while (1) {
-        client_sock = Accept(server_sock, client_addr, addr_len);
+        client_sock = Accept(server_sock, &client_addr, &addr_len);
 
         // Criar um processo filho para lidar com o cliente
         if (fork() == 0) {
