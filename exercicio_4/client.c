@@ -7,6 +7,39 @@
 
 #define BUFFER_SIZE 1024
 
+// Criar socket
+int Socket(int family, int type, int flag) {
+    int server_sock;
+    if ((server_sock = socket(family, type, flag)) == -1) {
+        perror("Erro ao criar o socket");
+        exit(EXIT_FAILURE);
+    } else {
+        return server_sock;
+    }
+}
+
+int Connect(int client_sock, struct sockaddr_in server_addr) {
+    // Conectar ao servidor
+    if (connect(client_sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
+        perror("Erro ao conectar ao servidor");
+        close(client_sock);
+        exit(EXIT_FAILURE);
+    }
+    
+    return 0;
+}
+
+int Getsockname(int client_sock, struct sockaddr_in client_addr, socklen_t client_addr_len) {
+    //Adquirir informações sobre a conexão
+    if (getsockname(client_sock, (struct sockaddr *)&client_addr, &client_addr_len) == -1) {
+        perror("Erro ao obter o endereço do cliente");
+        close(client_sock);
+        exit(EXIT_FAILURE);
+    }
+
+    return 0;
+}
+
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         fprintf(stderr, "Uso: %s <IP_do_Servidor> <Porta>\n", argv[0]);
@@ -21,29 +54,16 @@ int main(int argc, char *argv[]) {
     char buffer[BUFFER_SIZE];
 
     // Criar o socket do cliente
-    if ((client_sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
-        perror("Erro ao criar o socket");
-        exit(EXIT_FAILURE);
-    }
+    client_sock = Socket(AF_INET, SOCK_STREAM, 0);
 
     // Configurar o endereço do servidor
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(server_port);
     inet_pton(AF_INET, server_ip, &server_addr.sin_addr);
 
-    // Conectar ao servidor
-    if (connect(client_sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
-        perror("Erro ao conectar ao servidor");
-        close(client_sock);
-        exit(EXIT_FAILURE);
-    }
+    Connect(client_sock, server_addr);
 
-    //Adquirir informações sobre a conexão
-    if (getsockname(client_sock, (struct sockaddr *)&client_addr, &client_addr_len) == -1) {
-        perror("Erro ao obter o endereço do cliente");
-        close(client_sock);
-        exit(EXIT_FAILURE);
-    }
+    Getsockname(client_sock, client_addr, client_addr_len);
 
     char client_ip[INET_ADDRSTRLEN];
     inet_ntop(AF_INET, &client_addr.sin_addr, client_ip, sizeof(client_ip));

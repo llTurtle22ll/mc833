@@ -1,57 +1,15 @@
 Servidor iniciado e aguardando conexões...
-Conexão de 127.0.0.1:43930
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Conexão de 127.0.0.1:43936
-Tarefa enviada para 127.0.0.1:43936: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43936: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43936: TAREFA_LIMPEZA
-Conexão de 127.0.0.1:35358
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43936: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43936: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43936: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43936: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43936: TAREFA_LIMPEZA CONCLUÍDA
-Instrução enviada para 127.0.0.1:43936: ENCERRAR
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43936: CONEXÃO ENCERRADA
-Desconexão de 127.0.0.1:43936
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:35358: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Tarefa enviada para 127.0.0.1:43930: TAREFA_LIMPEZA
-Resposta do cliente 127.0.0.1:35358: TAREFA_LIMPEZA CONCLUÍDA
-Instrução enviada para 127.0.0.1:35358: ENCERRAR
-Resposta do cliente 127.0.0.1:43930: TAREFA_LIMPEZA CONCLUÍDA
-Instrução enviada para 127.0.0.1:43930: ENCERRAR
-Resposta do cliente 127.0.0.1:35358: CONEXÃO ENCERRADA
-Desconexão de 127.0.0.1:35358
-Resposta do cliente 127.0.0.1:43930: CONEXÃO ENCERRADA
-Desconexão de 127.0.0.1:43930
+Conexão de 0.0.0.0:0
+Instrução enviada para 0.0.0.0:0: ENCERRAR
+Conexão de 0.0.0.0:0
+Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
+Resposta do cliente 0.0.0.0:0: CONEXÃO ENCERRADA
+Desconexão de 0.0.0.0:0
+Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
+Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
+Tarefa enviada para 0.0.0.0:0: TAREFA_LIMPEZA
+Resposta do cliente 0.0.0.0:0: TAREFA_LIMPEZA CONCLUÍDA
+Instrução enviada para 0.0.0.0:0: ENCERRAR
+Resposta do cliente 0.0.0.0:0: CONEXÃO ENCERRADA
+Desconexão de 0.0.0.0:0

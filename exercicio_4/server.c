@@ -97,6 +97,49 @@ void handle_client(int client_sock, struct sockaddr_in client_addr) {
     close(client_sock);
 }
 
+// Criar socket
+int Socket(int family, int type, int flag) {
+    int server_sock;
+    if ((server_sock = socket(family, type, flag)) == -1) {
+        perror("Erro ao criar o socket");
+        exit(EXIT_FAILURE);
+    } else {
+        return server_sock;
+    }
+}
+
+int Bind(struct sockaddr_in server_addr, int server_sock) {
+    // Associar o socket ao endereço e porta
+    if (bind(server_sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
+        perror("Erro no bind");
+        close(server_sock);
+        exit(EXIT_FAILURE);
+    } else {
+        return 0;
+    }
+}
+
+int Listen(int server_sock) {
+    // Escutar por conexões
+    if (listen(server_sock, 5) == -1) {
+        perror("Erro no listen");
+        close(server_sock);
+        exit(EXIT_FAILURE);
+    } else {
+        return 0;
+    }
+}
+
+int Accept(int server_sock, struct sockaddr_in client_addr, socklen_t addr_len) {
+    int client_sock;
+    // Aceitar conexão de um cliente
+    if ((client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &addr_len)) == -1) {
+        perror("Erro no accept");
+    }
+
+    return client_sock;
+}
+
 int main(int argc, char *argv[]) {
     clear_log_file();
     
@@ -107,39 +150,21 @@ int main(int argc, char *argv[]) {
     // Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    // Criar socket
-    if ((server_sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
-        perror("Erro ao criar o socket");
-        exit(EXIT_FAILURE);
-    }
+    server_sock = Socket(AF_INET, SOCK_STREAM, 0);
 
     // Configurar o endereço do servidor
     server_addr.sin_family = AF_INET;
     server_addr.sin_addr.s_addr = INADDR_ANY;
     server_addr.sin_port = htons(PORT);
 
-    // Associar o socket ao endereço e porta
-    if (bind(server_sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
-        perror("Erro no bind");
-        close(server_sock);
-        exit(EXIT_FAILURE);
-    }
+    Bind(server_addr, server_sock);
 
-    // Escutar por conexões
-    if (listen(server_sock, 5) == -1) {
-        perror("Erro no listen");
-        close(server_sock);
-        exit(EXIT_FAILURE);
-    }
+    Listen(server_sock);
 
     log_message("Servidor iniciado e aguardando conexões...");
 
     while (1) {
-        // Aceitar conexão de um cliente
-        if ((client_sock = accept(server_sock, (struct sockaddr *)&client_addr, &addr_len)) == -1) {
-            perror("Erro no accept");
-            continue;
-        }
+        client_sock = Accept(server_sock, client_addr, addr_len);
 
         // Criar um processo filho para lidar com o cliente
         if (fork() == 0) {
