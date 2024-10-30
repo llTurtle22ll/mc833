@@ -1,0 +1,26 @@
+Resposta do Servidor 1: Monitoramento do servidor:
+IP: 127.0.0.1
+Porta: 46931
+Horário: Tue Oct 29 21:00:44 2024
+CPU: 59%
+Memória: 94%
+Status: Inativo
+Teste de entrada para o cliente
+
+Resposta do Servidor 2: Monitoramento do servidor:
+IP: 127.0.0.1
+Porta: 34605
+Horário: Tue Oct 29 21:00:44 2024
+CPU: 84%
+Memória: 42%
+Status: Inativo
+Teste de entrada para o cliente
+
+Resposta do Servidor 1: Simulação de multiplexação de E/S
+
+Resposta do Servidor 2: Simulação de multiplexação de E/S
+
+Resposta do Servidor 1: Turma de Redes 2024
+
+Resposta do Servidor 2: Turma de Redes 2024
+
