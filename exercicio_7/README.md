@@ -1,6 +1,6 @@
 ## Instruções para compilação
 
-Dentro do arquivo ZIP enviado, existe um Makefile, portanto só é necessário rodar o comando "make" no terminal.
+Dentro do arquivo diretório com os códigos, existe um Makefile, portanto só é necessário rodar o comando "make" no terminal.
 
 Caso não tenha "make" instalado na sua máquina, utilize os seguintes comandos:
 
