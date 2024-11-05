@@ -1,0 +1,7 @@
+Conexão de zolet2
+Conexão de Pedrola
+Conexão de Turtle
+Pedrola: mensagem
+Usuário desconectado: Pedrola
+Usuário desconectado: Turtle
+Usuário desconectado: zolet2
