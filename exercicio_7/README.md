@@ -18,6 +18,6 @@ Para iniciar o servidor, após a compilação, rode o executável do servidor da
 Sempre que o servidor é reiniciado, o arquivo de log é limpo, iniciando um novo arquivo de log.
 
 Para iniciar um cliente, utilize o comando:
-"./cliente 127.0.0.1 <NICKNAME>"
+"./cliente 127.0.0.1 NICKNAME"
 
 onde NICKNAME é o nome escolhido pelo usuário que será exibido para os demais clientes conectados no servidor de chat.
